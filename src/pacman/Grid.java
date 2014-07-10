@@ -1,7 +1,10 @@
 package pacman;
 
+import java.util.HashMap;
+
 public class Grid {
 
+    //private HashMap
     private Pacman pacman;
 
     public Grid(){
@@ -16,4 +19,11 @@ public class Grid {
         return true;
     }
 
+    public void movePacman() {
+
+    }
+
+    public Object getElement(int i, int i1) {
+        return pacman;
+    }
 }

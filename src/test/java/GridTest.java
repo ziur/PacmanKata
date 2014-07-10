@@ -21,4 +21,31 @@ public class GridTest {
         assert(grid.HasDots());
     }
 
+    @Test
+    public void TestMovePacman() {
+        Grid grid = new Grid();
+        Pacman pacman = grid.getPacman();
+        grid.movePacman();
+        Object pacmanMoved = grid.getElement(0, 1);
+        assertEquals(pacman, pacmanMoved);
+    }
+
+    @Test
+    public void TestGetDotPosition() {
+        Grid grid = new Grid();
+        Pacman pacman = grid.getPacman();
+        Object dot = grid.getElement(0, 1);
+        assertNotEquals(pacman, dot);
+    }
+
+    @Test
+    public void TestMovePacmanAndEatDot() {
+        Grid grid = new Grid();
+        Pacman pacman = grid.getPacman();
+        Element dot = grid.getElement(0, 1);
+
+        grid.movePacman();
+        Object pacmanMoved = grid.getElement(0, 1);
+        Element dot = grid.getElement(0, 2);
+    }
 }

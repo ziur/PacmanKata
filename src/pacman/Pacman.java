@@ -2,6 +2,8 @@ package pacman;
 
 public class Pacman {
 
+
+
     public enum Direction { Left, Right, Up, Down };
 
     private Direction currentDirection;
@@ -17,7 +19,13 @@ public class Pacman {
     public void goUp() {
         currentDirection = Direction.Up;
     }
-
+    public boolean eat(Element element) {
+        if(element instanceof Dot)
+        {
+            return true;
+        }
+        return false;
+    }
     public void goDown() {
         currentDirection = Direction.Down;
     }

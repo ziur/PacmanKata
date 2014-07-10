@@ -41,10 +41,18 @@ public class PacmanTest {
         assertEquals(Pacman.Direction.Down, pacman.getDirection());
     }
 
-    public void testMovesOnEachTick()
+    @Test
+    public void testEatADot()
     {
-        Grid grid = new Grid();
-
-
+        Pacman pacman = new Pacman();
+        Element dot = new Dot();
+        assertEquals(true, pacman.eat(dot));
+    }
+    @Test
+    public void testEatAWall()
+    {
+        Pacman pacman = new Pacman();
+        Element wall = new Wall();
+        assertEquals(false, pacman.eat(wall));
     }
 }
